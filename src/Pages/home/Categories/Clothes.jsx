@@ -27,7 +27,7 @@ function Clothes() {
     
     return (
         <Layout>
-            <div className="grid grid-cols-4 gap-4 w-full max-w-screen-lg">
+            <div className="grid md:grid-cols-4 gap-4 w-full max-w-screen-lg sm:grid-cols-2  lg:grid-cols-4 xl:grid-cols-5">
             {
                 clothes?.map((item => (<Card key={item.id} data={item}/>)
                 

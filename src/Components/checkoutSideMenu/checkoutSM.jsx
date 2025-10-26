@@ -41,7 +41,7 @@ function CheckoutSideMenu() {
       )
     
     return(
-        <aside className={`${context.isCheckoutOpen ? 'flex ' : 'hidden '}top-[68px] w-[360px] h-[calc(100vh-80px)]  flex-col fixed right-0 bg-white border border-black rounded-lg bottom-4 mb-2 overflow-y-auto`}>
+        <aside className={`${context.isCheckoutOpen ? 'flex ' : 'hidden '}md:top-[68px] top-[0] md:w-[360px] w-[full] md:h-[calc(100vh-80px)] h-[calc(100vh-65px)] flex-col fixed right-0 bg-white md:border border-black rounded-lg bottom-4 mb-2 overflow-y-auto`}>
             <div className="flex justify-between m-4">
                 <p className="bg-gray-400 border border-transparent rounded-sm p-1 font-medium text-x">My Order</p>
                 <button onClick={() => context.closeCheckout()} aria-label="Close checkout menu">

@@ -40,7 +40,7 @@ function Card(data) {
     
     return (
         <div 
-            className="bg-whit  cursor-pointer w-56 lg:h-60 sm:h-80 rounded-lg sm:mb-6 " 
+            className="bg-white  cursor-pointer w-56 lg:h-60 sm:h-80 rounded-lg sm:mb-6 " 
             onClick={() => showProduct(data.data)}
         >
             <figure className="relative m-3 mb-0 w-96 h-4/5  ">

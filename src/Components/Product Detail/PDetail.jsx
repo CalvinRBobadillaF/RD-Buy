@@ -6,7 +6,7 @@ function ProductDetail() {
     const context = useContext(WaggonContext)
     console.log('Product to show: ', context.showDetail)
     return(
-        <aside className={`${context.isDetailOpen ? 'flex ' : 'hidden '}top-[68px] w-[360px] h-[calc(100vh-80px)]  flex-col fixed right-0 bg-white border border-black rounded-lg bottom-4`}>
+        <aside className={`${context.isDetailOpen ? 'flex ' : 'hidden '}top-[0] md:top-[80px] w-[full] h-[full] md:w-[360px] md:h-[100vh-80px]  flex-col fixed right-0 bg-white border border-black rounded-lg bottom-4`}>
         <div className="flex justify-between m-4">
             <p className="bg-gray-400 border border-transparent rounded-sm p-1 font-medium text-x">{context.showDetail.title}</p>
             <button onClick={() => context.closeDetail()}>
@@ -34,3 +34,5 @@ function ProductDetail() {
 }
 
 export default ProductDetail
+
+//calc(100vh-80px)]

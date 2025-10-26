@@ -37,6 +37,8 @@ export const WaggonProvider = ({ children }) => {
         const existingProductIndex = cartProducts.findIndex(
             item => item.id === productToAdd.id
         )
+
+        
         
         if (existingProductIndex !== -1) {
             // Create a new array to avoid mutation
@@ -47,6 +49,8 @@ export const WaggonProvider = ({ children }) => {
                 ...updatedCart[existingProductIndex],
                 quantity: (updatedCart[existingProductIndex].quantity || 1) + 1
             }
+            closeCheckout()
+            
             
             setCartProducts(updatedCart)
         } else {
@@ -73,6 +77,7 @@ export const WaggonProvider = ({ children }) => {
     const [isCheckoutOpen, setCheckoutOpen] = useState(false)
     const openCheckout = () => setCheckoutOpen(true)
     const closeCheckout = () => setCheckoutOpen(false)
+    const changeCheckout = ( ) => setCheckoutOpen(!isCheckoutOpen)
 
     //Cart - Orders
     const [order, setOrder] = useState([])
@@ -98,6 +103,7 @@ export const WaggonProvider = ({ children }) => {
             order,
             toggleTheme,
             theme,
+            changeCheckout,
             setOrder
         }}>
         {children}
