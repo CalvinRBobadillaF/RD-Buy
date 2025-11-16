@@ -14,7 +14,7 @@ function MyOrder() {
 
   if (context.order == 0) {
     return (
-      <div className="flex items-center justify-center h-screen px-4 lg:ml-[10vw]">
+      <div className="flex items-center justify-center h-screen px-4 lg:+ml-[10vw]">
         <p
           className={`${theme === 'Dark' ? 'text-white' : 'text-gray-600'} text-center text-lg`}
         >
