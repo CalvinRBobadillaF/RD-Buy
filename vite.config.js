@@ -9,6 +9,6 @@ export default defineConfig({
     tailwindcss(),
     
   ],
-  base: "/",
+  base: "/DR-Buy",
 })
 
