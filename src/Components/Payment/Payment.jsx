@@ -63,7 +63,7 @@ export default function PaymentComponent() {
 // max-w-3xl mx-auto
   return (
     <Layout>
-    <div className="  overflow-y-scroll ml-[2vw]">
+    <div className="  overflow-y-scroll ">
       {/* Contenedor principal */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* LEFT: Card info (no editable) */}

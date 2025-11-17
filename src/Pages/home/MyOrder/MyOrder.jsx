@@ -14,7 +14,7 @@ function MyOrder() {
 
   if (context.order == 0) {
     return (
-      <div className="flex items-center justify-center h-screen px-4 lg:+ml-[10vw]">
+      <div className="flex items-center justify-center h-screen px-4 lg:ml-[10vw]">
         <p
           className={`${theme === 'Dark' ? 'text-white' : 'text-gray-600'} text-center text-lg`}
         >
@@ -26,7 +26,7 @@ function MyOrder() {
 
   return (
     <Layout>
-      <div className="flex justify-between items-center m-3 ml-[7vw] md:ml-[7vw] ">
+      <div className="flex justify-between items-center m-3 ml-[5vw] md:ml-[7vw] ">
         <Link to="/">
           <svg xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -47,7 +47,7 @@ function MyOrder() {
         <div className="w-6" />
       </div>
 
-      <div className="flex flex-col ml-[6vw] space-y-3 mb-5">
+      <div className="flex flex-col space-y-3 mb-5">
         {context.order?.slice(-1)[0].products.map(product => (
           <OrderCard
             key={product.id}
