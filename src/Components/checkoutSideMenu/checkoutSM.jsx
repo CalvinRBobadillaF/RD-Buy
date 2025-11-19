@@ -49,7 +49,7 @@ function CheckoutSideMenu() {
 
       if (context.cartProducts == 0) {
         return(
-            <aside className={`${context.isCheckoutOpen ? 'flex ' : 'hidden '} ${theme === 'Dark' ? 'bg-neutral-600  md:top-[68px] top-[0] md:w-[360px] w-full md:h-[calc(100vh-80px)] h-[calc(100vh-65px)]  flex-col justify-center fixed right-0  md:border border-black rounded-lg bottom-4 mb-2 overflow-y-auto ' : 'bg-amber-50 md:top-[68px] top-[0] md:w-[360px] w-full md:h-[calc(100vh-80px)] h-[calc(100vh-65px)]  flex-col justify-center fixed right-0  md:border border-black rounded-lg bottom-4 mb-2  overflow-y-auto'}`}>
+            <aside className={`${context.isCheckoutOpen ? 'flex ' : 'hidden '} ${theme === 'Dark' ? 'bg-neutral-600  ' : 'bg-amber-50 '} md:top-[68px] top-[0] md:w-[360px] w-full md:h-[calc(100vh-80px)] h-[calc(100vh-65px)]  flex-col justify-center fixed right-0  md:border border-black rounded-lg bottom-4 mb-2 overflow-y-auto `}>
             
                 <div className="flex items-center justify-center h-screen ml-[2vw] ">
       <p className={`${theme === 'Dark' ? 'text-white' : 'text-gray-700'}text-center text-lg   `}>
@@ -108,3 +108,4 @@ function CheckoutSideMenu() {
 }
 
 export default CheckoutSideMenu
+

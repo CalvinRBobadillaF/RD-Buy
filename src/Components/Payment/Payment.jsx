@@ -5,14 +5,13 @@ import { WaggonContext } from "../../Context/Context";
 import { dateTime } from "../../Utils/date";
 import { useNavigate } from "react-router-dom";
 
-// Componente de pago simple con tarjeta predefinida (no editable), lista de productos, total y overlay de "Pago realizado"
-// Usa Tailwind CSS
+
 
 export default function PaymentComponent() {
   // productos por defecto si no vienen por props
   let context = useContext(WaggonContext)
   const navigate = useNavigate();
- const { theme, toggleTheme } = useContext(WaggonContext)
+ const { theme } = useContext(WaggonContext)
 
   const [processing, setProcessing] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -20,7 +19,6 @@ export default function PaymentComponent() {
   const totalPrice = context.cartProducts.reduce((sum, product) => 
         sum + product.price * (product.quantity || 1), 0
       )
-
 
 
   const handlePay = () => {
@@ -53,7 +51,7 @@ export default function PaymentComponent() {
 
   if (context.order == 0) {
         return(
-            <div className={`${theme === 'Dark' ? ' text-white flex items-center justify-center h-screen' : 'bg-white text-black flex items-center justify-center h-screen'}`}>
+            <div className={`${theme === 'Dark' ? 'text-white ' : ' text-black'}  flex items-center justify-center h-screen`}>
       <p className="text-center text-lg ">
         You don't have a recent order, create a new one!
       </p>
@@ -146,13 +144,12 @@ export default function PaymentComponent() {
         </div>
       </div>
 
-      {/* Overlay de éxito (z-index alto). Cuando showSuccess es true, mostramos un overlay gris que cubre todo y un mensaje centrado */}
+
       {showSuccess && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-          {/* Fondo gris semitransparente */}
+
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
 
-          {/* Card del mensaje */}
           <div className="relative z-10 bg-white rounded-lg p-6 shadow-xl w-80 text-center">
             <h3 className="text-xl font-semibold mb-2 text-black">Payment processed</h3>
             <p className="text-gray-600" >Thank you! — Your payment was processed correctly.</p>
@@ -163,3 +160,5 @@ export default function PaymentComponent() {
     </Layout>
   );
 }
+
+

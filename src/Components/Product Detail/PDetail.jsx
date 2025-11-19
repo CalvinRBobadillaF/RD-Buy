@@ -1,16 +1,16 @@
 import { useContext } from "react"
-import { WaggonContext, WaggonProvider } from "../../Context/Context"
+import { WaggonContext } from "../../Context/Context"
 
 
 function ProductDetail() {
     const context = useContext(WaggonContext)
-    console.log('Product to show: ', context.showDetail)
-    const { theme, toggleTheme } = useContext(WaggonContext)
+
+    const { theme } = useContext(WaggonContext)
     
 
 
     return(
-        <aside className={`${context.isDetailOpen ? 'flex ' : 'hidden '} ${theme === 'Dark' ? 'bg-neutral-700 top-[0] md:mt-[5vh] lg:mt-[10vh] lg:h-[85vh] overflow-y-scroll w-[full] h-[full] md:w-[360px] sm:h-[85vh]      flex-col fixed right-0  border border-black rounded-lg bottom-4 md:bottom-0' : 'bg-white top-[0] md:top-[80px] w-[full] h-[full] md:w-[360px] md:h-[100vh-80px]   flex-col fixed right-0  border border-black rounded-lg bottom-4'}`}>
+        <aside className={`${context.isDetailOpen ? 'flex ' : 'hidden '} ${theme === 'Dark' ? 'bg-neutral-700 ' : 'bg-white text-black '} top-[0] md:mt-[5vh] lg:mt-[10vh] lg:h-[85vh] overflow-y-scroll w-[full] h-[full] md:w-[360px] sm:h-[85vh]      flex-col fixed right-0  border border-black rounded-lg bottom-4 md:bottom-0`}>
         <div className="flex  m-4 mt-15">
             <button onClick={() => context.closeDetail()}  className=" ">
             
@@ -24,11 +24,11 @@ function ProductDetail() {
             <figure>
                 <img className="w-full h-full   p-2" src={context.showDetail.images} alt={context.showDetail.title} />
             </figure>
-            <p className="text-center font-bold p-1 bg-gray-600 text-white text-lg">
+            <p className="text-center font-bold p-1 md:ml-2 bg-gray-600 text-white text-lg">
                 
                 <span>${context.showDetail.price}</span>
             </p>
-            <p className="p-2 font-medium ">
+            <p className="p-2 font-medium  ">
                 <span>{context.showDetail.description}</span>
             </p>
             
@@ -41,4 +41,3 @@ function ProductDetail() {
 
 export default ProductDetail
 
-//calc(100vh-80px)]

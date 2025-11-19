@@ -1,6 +1,7 @@
 import { createContext, useState } from "react"
 
 export const WaggonContext = createContext()
+import { dateTime } from "../Utils/date"
 
 export const WaggonProvider = ({ children }) => {
     //Shopping Waggon - counter
@@ -13,6 +14,8 @@ export const WaggonProvider = ({ children }) => {
     const [userData, setUserData] = useState({})
 
     const [orderPaid, setOrderPaid] = useState([])
+    const [cartCount, setCartCount] = useState(0);
+    const [ProductTrigger, setProductTrigger] = useState(0);
 
     console.log(Count)
 
@@ -25,8 +28,6 @@ export const WaggonProvider = ({ children }) => {
         setTheme((prev) => prev === 'Light' ? 'Dark' : 'Light' )
     }
 
-    
-
     //Product Detail - aside
     const [isDetailOpen, setDetailOpen] = useState(false)
     const openDetail = () => setDetailOpen(true)
@@ -38,12 +39,14 @@ export const WaggonProvider = ({ children }) => {
     //Cart Products:
     const [cartProducts, setCartProducts] = useState([])
 
-    // Function to add products to cart with proper duplicate handling
+
     const addProductToCart = (productToAdd) => {
-        // Increment the total count
+
         setCount(prev => prev + 1)
+         setCartCount(prev => prev + 1);
+        setProductTrigger(Date.now()); 
         
-        // Check if the product is already in the cart by ID
+
         const existingProductIndex = cartProducts.findIndex(
             item => item.id === productToAdd.id
         )
@@ -51,10 +54,10 @@ export const WaggonProvider = ({ children }) => {
         
         
         if (existingProductIndex !== -1) {
-            // Create a new array to avoid mutation
+       
             const updatedCart = [...cartProducts]
             
-            // Increment the quantity of the existing product
+      
             updatedCart[existingProductIndex] = {
                 ...updatedCart[existingProductIndex],
                 quantity: (updatedCart[existingProductIndex].quantity || 1) + 1
@@ -69,14 +72,12 @@ export const WaggonProvider = ({ children }) => {
         }
     }
 
-    // Replace the default setCartProducts with a version that properly handles
-    // the case where the component is still using the old approach
+  
     const legacySetCartProducts = (newProducts) => {
-        // If setting directly (like in OrderCard deletion),
-        // just use the standard setter
+        
         setCartProducts(newProducts)
         
-        // Update count to match total quantities
+        
         const newCount = newProducts.reduce((sum, product) => 
             sum + (product.quantity || 1), 0
         )
@@ -115,9 +116,9 @@ export const WaggonProvider = ({ children }) => {
             setOrderPaid,
             closeMenu,
             openMenu,
+            ProductTrigger,
             changeCheckout,
             setCartProducts: legacySetCartProducts,
-            
             addProductToCart,
             isCheckoutOpen,
             setCheckoutOpen,
@@ -126,7 +127,6 @@ export const WaggonProvider = ({ children }) => {
             order,
             toggleTheme,
             theme,
-            
             openAndCloseMenu,
             isSideMenuOpen,
             setIsSideMenuOpen,

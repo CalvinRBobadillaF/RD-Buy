@@ -3,7 +3,7 @@
 
 function Layout({children}) {
     return(
-    <div className=" md:flex md:flex-col md:w-[90vw] md:h-[100vh] sm:w-[100vw] mt-15 md:ml-3 items-center md:items-center ">
+    <div className=" md:flex md:flex-col md:w-[90vw] md:h-[100vh] sm:w-[100vw] mt-15 lg:ml-5 items-center md:items-center ">
         {children}
     </div>
     )

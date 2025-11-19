@@ -5,7 +5,7 @@ import { WaggonContext } from "../../Context/Context";
 function SideMenu() {
   const Context = useContext(WaggonContext);
   const isMenuOpen = Context.isSideMenuOpen;
-  const { theme, toggleTheme } = useContext(WaggonContext)
+  const { theme } = useContext(WaggonContext)
   const storedUser = localStorage.getItem('userData')
   const parsedUser = JSON.parse(storedUser)
 
@@ -21,9 +21,9 @@ function SideMenu() {
 
       {/* Panel lateral */}
       <aside
-        className={`${theme === 'Dark' ? 'fixed top-0 right-0 z-50 h-full w-72 bg-gray-700 shadow-lg transform transition-transform duration-300 ease-in-out' : 'fixed top-0 right-0 z-50 h-full w-72 bg-white shadow-lg transform transition-transform duration-300 ease-in-out'}
+        className={`${theme === 'Dark' ? 'bg-gray-700' : 'bg-white'}
         ${isMenuOpen ? "translate-x-0" : "translate-x-full"}
-        lg:hidden`}
+        lg:hidden fixed top-0 right-0 z-50 h-full w-72  shadow-lg transform transition-transform duration-300 ease-in-out`}
       >
         <div className="flex justify-between items-center p-4  border-b">
           <h2 className="text-lg font-semibold">Menu</h2>

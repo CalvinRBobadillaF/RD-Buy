@@ -1,12 +1,19 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { WaggonContext } from "../../../Context/Context"
+import ProductAnimation from "../../ProductAnimation/ProductAnimation";
 
 function Card(data) {
     const Context = useContext(WaggonContext)
-    const { theme, toggleTheme } = useContext(WaggonContext)
+    const { theme } = useContext(WaggonContext)
+
+    const [cartCount, setCartCount] = useState(0);
+    const [toastTrigger, setToastTrigger] = useState(0);
+
     
     const addProductToCart = (e, productData) => {
         e.stopPropagation(); // Prevent event propagation to the main div
+         setCartCount(prev => prev + 1);
+        setToastTrigger(Date.now()); // cambia el trigger → muestra el toast
         
         // Check if the product already exists in the cart
         const productExists = Context.cartProducts.findIndex(
@@ -38,12 +45,16 @@ function Card(data) {
         Context.openDetail();
         Context.setShowDetail(productDetail); // Correct way to update state
     };
+
+    
     
     return (
+        
         <div 
-            className={`${theme === 'Dark' ? '  sm:w-[40vw]   md:ml-[2vw]   cursor-pointer lg:h-[50vh]    rounded-lg sm:mb-6 ' : 'bg-white w-56 ml-[5.5vw] cursor-pointer sm:w-[40vw]  lg:h-[50vh]  rounded-lg sm:mb-6 '}`}
+            className={`${theme === 'Dark' ? '  ' : 'bg-white '} sm:w-[40vw]   md:ml-[2vw]   cursor-pointer lg:h-[50vh]     rounded-lg sm:mb-6 `}
             onClick={() => showProduct(data.data)}
         >
+            <ProductAnimation trigger={toastTrigger} />
             <figure className="relative m-3 mb-0 w-[93vw] lg:w-[21vw]  sm:w-[40vw] md:w-[40vw] h-4/5  ">
                 <span className="absolute bottom-0 left-0 bg-white/60 rounded-lg text-black m-2 text-m lg:text-lg px-3 py-0.5 ">
                     {data.data.category.name}
@@ -62,7 +73,7 @@ function Card(data) {
                     </svg>
                 </button>
             </figure>
-            <p className={`${theme === 'Dark' ? 'flex justify-between ml-3 md:w-[40vw] lg:w-[21vw] sm:w-[40vw] bg-neutral-700 p-2.5 rounded-b-lg mt-0 shadow-5 text-2xl w-[93vw] ' : 'flex justify-between ml-3 md:w-[40vw] lg:w-[21vw] sm:w-[40vw] bg-gray-300 p-2.5 rounded-b-lg mt-0 shadow-5 text-2xl w-[93vw]'}`}>
+            <p className={`${theme === 'Dark' ? 'bg-neutral-700' : 'bg-white'} flex justify-between ml-3 md:w-[40vw] lg:w-[21vw] sm:w-[40vw]  p-2.5 rounded-b-lg mt-0 shadow-5 text-2xl w-[93vw] `}>
                 <span className=" text">{data.data.title}</span>
                 <span className="font-medium ">${data.data.price}</span>
             </p>
@@ -72,4 +83,3 @@ function Card(data) {
 
 export default Card
 
-//ml-[5.5vw  ]  w-56 

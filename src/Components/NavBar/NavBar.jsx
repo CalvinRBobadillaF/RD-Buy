@@ -3,27 +3,32 @@ import { WaggonContext } from "../../Context/Context";
 import { useContext } from "react";
 
 import SideMenu from "../SideMenu/SideMenu";
+import ProductAnimation from "../ProductAnimation/ProductAnimation";
 
 function NavBar() {
 
   const Context = useContext(WaggonContext);
   const isMenuOpen = Context.isSideMenuOpen
-  console.log(isMenuOpen)
   const ActiveStyle = "flex";
   const storedUser = localStorage.getItem('userData')
   const parsedUser = JSON.parse(storedUser)
-  console.log(parsedUser)
+
+  
+  
   
 
 
   if(isMenuOpen == true) {
     return <SideMenu/> 
   }   
+
+  
+
   
   
   return(
     
-    <nav className={`${Context.theme == 'Dark' ? 'justify-between items-center fixed  lg:sticky  transition-colors duration-500 ease-in-out shadow-lg bg-gray-700   z-16  w-full py-3 px-4 text-sm font-medium bottom-0 lg:top-0' : 'justify-between items-center fixed  lg:sticky  transition-colors duration-500 ease-in-out shadow-lg bg-gray-300   z-16  w-full py-3 px-4 text-sm font-medium bottom-0 lg:top-0'} `}
+    <nav className={`${Context.theme == 'Dark' ? 'bg-neutral-700' : 'bg-gray-300'} justify-between items-center fixed  lg:sticky  transition-colors duration-500 ease-in-out shadow-lg    z-16  w-full py-3 px-4 text-sm font-medium bottom-0 lg:top-0 `}
     >
       <div className="  flex justify-between items-center w-full ">
         
@@ -162,20 +167,3 @@ export default NavBar;
 
 
 
-/*
-
-
-<NavLink to="/my-orders/latest" className={({ isActive }) =>
-                `${isActive ? ActiveStyle : ""} flex flex-col items-center justify-center text-xs md:text-sm`
-              }>
-</NavLink>
-
-<li className="hidden lg:flex items-center gap-2 ">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5  w-5">
-              <path fillRule="evenodd" d="M6 5v1H4.667a1.75 1.75 0 0 0-1.743 1.598l-.826 9.5A1.75 1.75 0 0 0 3.84 19H16.16a1.75 1.75 0 0 0 1.743-1.902l-.826-9.5A1.75 1.75 0 0 0 15.333 6H14V5a4 4 0 0 0-8 0Zm4-2.5A2.5 2.5 0 0 0 7.5 5v1h5V5A2.5 2.5 0 0 0 10 2.5ZM7.5 10a2.5 2.5 0 0 0 5 0V8.75a.75.75 0 0 1 1.5 0V10a4 4 0 0 1-8 0V8.75a.75.75 0 0 1 1.5 0V10Z" clipRule="evenodd" />
-            </svg>
-            <div>{Context.Count}</div>
-          </li>
-
-fixed
-              */

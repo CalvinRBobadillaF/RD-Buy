@@ -11,7 +11,8 @@ import NavBar from "../../../Components/NavBar/NavBar";
 import Layout from "../../../Components/NavBar/Layout/Layout";
 import CheckoutSideMenu from "../../../Components/checkoutSideMenu/checkoutSM";
 
-import ToggleTheme from "../../../Components/ToggleTheme";
+
+
 import Electronics from "../Categories/Electronics";
 import Clothes from "../Categories/Clothes";
 import Furniture from "../Categories/furniture";
@@ -55,7 +56,6 @@ function AppContent() {
  
   const color = theme === "Dark" ? "#e9ecef " : "#343a40 ";
 
-
   if (logged == false && storedUser ) {
     return(
       <>
@@ -85,7 +85,7 @@ function AppContent() {
   }}>
       <BrowserRouter>
       <NavBar />
-        <ToggleTheme />
+        
         
 
         <Layout>
@@ -103,9 +103,6 @@ function AppContent() {
 /* App: proveedor envolviendo el contenido */
 function App() {
   
-
-  
-
   return (
     <WaggonProvider>
       <AppContent />

@@ -3,7 +3,7 @@ import { WaggonContext } from '../../../Context/Context'
 
 function SignOn() {
   const context = useContext(WaggonContext)
-  const { theme, toggleTheme } = useContext(WaggonContext)
+  const { theme } = useContext(WaggonContext)
 
   const [userName, setUserName] = useState('')
   const [userBirth, setUserBirth] = useState('')
@@ -105,20 +105,3 @@ function SignOn() {
 export default SignOn
 
 
-/*  <button
-              onClick={() => {
-                context.logUser()
-                localStorage.setItem(
-                  'userData',
-                  JSON.stringify({
-                    name: 'Invitado',
-                    birth: '—',
-                    country: '—',
-                  })
-                )
-              }}
-              type="button"
-              className="w-full px-4 py-2 font-medium text-gray-700 bg-gray-100 rounded-md shadow-sm hover:bg-gray-200"
-            >
-              Log in as guest
-            </button> */

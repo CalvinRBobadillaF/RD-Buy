@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 function MyOrders() {
     const context = useContext(WaggonContext)
     console.log('ordenes:', context.order)
-     const { theme, toggleTheme } = useContext(WaggonContext)
+     const { theme } = useContext(WaggonContext)
 
     if (context.orderPaid == 0) {
         return(
