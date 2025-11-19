@@ -58,7 +58,7 @@ function NavBar() {
           <li onClick={() => { Context.closeDetail?.(); Context.closeCheckout?.(); }}>
             <NavLink
             
-              to="/electronics"
+              to="DR-Buy/electronics"
               className={({ isActive }) =>
                 `${isActive ? ActiveStyle : ""} flex flex-col items-center justify-center text-xs md:text-sm`
               }
@@ -83,7 +83,7 @@ function NavBar() {
           <li onClick={() => { Context.closeDetail?.(); Context.closeCheckout?.(); }}>
             <NavLink
             
-              to="/clothes"
+              to="DR-Buy/clothes"
               className={({ isActive }) =>
                 `${isActive ? ActiveStyle : ""} flex flex-col items-center justify-center text-xs md:text-sm`
               }
@@ -98,7 +98,7 @@ function NavBar() {
           <li onClick={() => { Context.closeDetail?.(); Context.closeCheckout?.(); }}>
             <NavLink
             
-              to="/furniture"
+              to="DR-Buy/furniture"
               className={({ isActive }) =>
                 `${isActive ? ActiveStyle : ""} flex flex-col items-center justify-center text-xs md:text-sm`
               }
@@ -134,19 +134,19 @@ function NavBar() {
           </li>
 
           <li className="hidden md:block">
-            <NavLink to="/my-order" className={isMenuOpen ? 'flex' : 'hidden lg:flex'}>
+            <NavLink to="DR-Buy/my-order" className={isMenuOpen ? 'flex' : 'hidden lg:flex'}>
               My-order
             </NavLink>
           </li>
 
           <li className=" md:block">
-            <NavLink to="/my-orders" className={isMenuOpen ? 'flex' : 'hidden lg:flex'}>
+            <NavLink to="DR-Buy/my-orders" className={isMenuOpen ? 'flex' : 'hidden lg:flex'}>
               My-orders
             </NavLink>
           </li>
 
           <li className="hidden md:block">
-            <NavLink to="/my-account" className={isMenuOpen ? 'flex' : 'hidden lg:flex'}>
+            <NavLink to="DR-Buy/my-account" className={isMenuOpen ? 'flex' : 'hidden lg:flex'}>
               My-Account
             </NavLink>
           </li>

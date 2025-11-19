@@ -90,7 +90,7 @@ function CheckoutSideMenu() {
                         <p className="font-medium">Total:</p>
                         <p className="font-bold">${totalPrice.toFixed(2)}</p>
                     </div>
-                    <NavLink to='my-order'>
+                    <NavLink to='DR-Buy/my-order'>
                     <button 
                         className="w-full bg-black text-white py-3 rounded-lg font-medium"
                         onClick={() => {

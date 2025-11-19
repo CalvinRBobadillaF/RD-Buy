@@ -64,7 +64,7 @@ function MyOrder() {
         </p>
       </div>
 
-      <NavLink to="/payment" className="flex justify-center">
+      <NavLink to="/DR-Buy/payment" className="flex justify-center">
         <button
           className={`${theme === 'Dark' ? 'bg-blue-900 text-white' : 'bg-neutral-700 text-white'} 
            bottom-25 left-4 right-4 px-25 py-4 md:px-5 md:py-5 rounded-md text-center md:w-[20vw]  items-center   md:mb-40  mb-30  text-amber-50 shadow-lg`}

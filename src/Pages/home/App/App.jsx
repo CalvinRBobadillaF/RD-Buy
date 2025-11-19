@@ -26,16 +26,16 @@ function AppRoutes() {
   const routes = useRoutes([
     { path: "/", element: <Home /> },
     { path: "/DR-Buy", element: <Home /> },
-    { path: "/my-orders", element: <MyOrders /> },
-    { path: "/my-order", element: <MyOrder /> },
-    { path: "/my-orders/latest", element: <MyOrder /> },
-    { path: "/sign-in", element: <SignIn /> },
-    { path: "/my-account", element: <MyAccount /> },
-    { path: "/electronics", element: <Electronics /> },
-    { path: "/clothes", element: <Clothes /> },
-    { path: "/furniture", element: <Furniture /> },
+    { path: "/DR-Buy/my-orders", element: <MyOrders /> },
+    { path: "/DR-Buy/my-order", element: <MyOrder /> },
+    { path: "/DR-Buy/my-orders/latest", element: <MyOrder /> },
+    { path: "/DR-Buy/sign-in", element: <SignIn /> },
+    { path: "/DR-Buy/my-account", element: <MyAccount /> },
+    { path: "/DR-Buy/electronics", element: <Electronics /> },
+    { path: "/DR-Buy/clothes", element: <Clothes /> },
+    { path: "/DR-Buy/furniture", element: <Furniture /> },
     { path: "*", element: <NotFound /> },
-    { path: "/payment", element: <PaymentComponent/> }
+    { path: "/DR-Buy/payment", element: <PaymentComponent/> }
   ]);
 
   return routes;
