@@ -17,11 +17,11 @@ function MyAccount() {
     >
       <div
         className={`
-          w-full max-w-md p-8 rounded-2xl border
-          transition-colors duration-700 ease-in-out shadow-xl
+          w-full max-w-md p-8 m-10 rounded-2xl border
+          transition-colors duration-700 ease-in-out shadow-xl 
           ${theme === 'Dark'
             ? 'bg-gray-800 border-gray-700 text-gray-100'
-            : 'bg-white border-gray-200 text-gray-800'
+            : 'bg-white border-gray-200 text-gray-800 '
           }
         `}
       >

@@ -41,7 +41,7 @@ function Card(data) {
     
     return (
         <div 
-            className={`${theme === 'Dark' ? '   w-56 sm:w-[40vw]  ml-[1vw] md:ml-[2vw]   cursor-pointer lg:h-[50vh]    rounded-lg sm:mb-6 ' : 'bg-white w-56 ml-[1vw] cursor-pointer sm:w-[40vw]  lg:h-[50vh]  rounded-lg sm:mb-6 '}`}
+            className={`${theme === 'Dark' ? '  sm:w-[40vw]   md:ml-[2vw]   cursor-pointer lg:h-[50vh]    rounded-lg sm:mb-6 ' : 'bg-white w-56 ml-[5.5vw] cursor-pointer sm:w-[40vw]  lg:h-[50vh]  rounded-lg sm:mb-6 '}`}
             onClick={() => showProduct(data.data)}
         >
             <figure className="relative m-3 mb-0 w-[93vw] lg:w-[21vw]  sm:w-[40vw] md:w-[40vw] h-4/5  ">
@@ -71,3 +71,5 @@ function Card(data) {
 }
 
 export default Card
+
+//ml-[5.5vw  ]  w-56 

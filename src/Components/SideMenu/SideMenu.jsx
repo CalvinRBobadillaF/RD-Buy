@@ -6,6 +6,8 @@ function SideMenu() {
   const Context = useContext(WaggonContext);
   const isMenuOpen = Context.isSideMenuOpen;
   const { theme, toggleTheme } = useContext(WaggonContext)
+  const storedUser = localStorage.getItem('userData')
+  const parsedUser = JSON.parse(storedUser)
 
   return (
     <>
@@ -66,7 +68,7 @@ function SideMenu() {
         <div className="flex justify-between items-center p-4 w-full border-t fixed bottom-3">
           <h2>
             <NavLink to="/sign-in" className= 'text-lg font-semibold '>
-              Bobadilla@xample.com
+              {parsedUser.name}
             </NavLink>
           </h2>
        </div>

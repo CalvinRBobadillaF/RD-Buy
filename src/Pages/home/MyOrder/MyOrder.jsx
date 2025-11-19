@@ -14,7 +14,7 @@ function MyOrder() {
 
   if (context.order == 0) {
     return (
-      <div className="flex items-center justify-center h-screen px-4 lg:ml-[10vw]">
+      <div className="flex justify-center items-center  h-screen px-4 lg:ml-[10vw]">
         <p
           className={`${theme === 'Dark' ? 'text-white' : 'text-gray-600'} text-center text-lg`}
         >
@@ -26,7 +26,7 @@ function MyOrder() {
 
   return (
     <Layout>
-      <div className="flex justify-between items-center m-3 ml-[5vw] md:ml-[7vw] ">
+      <div className="flex justify-center md:justify-between  items-center mt-12 md:mt-[-10vh] mb-1  ">
         <Link to="/">
           <svg xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -44,10 +44,10 @@ function MyOrder() {
           My order
         </h1>
 
-        <div className="w-6" />
+        
       </div>
 
-      <div className="flex flex-col space-y-3 mb-5">
+      <div className="p-4 space-y-3 mb-5 " >
         {context.order?.slice(-1)[0].products.map(product => (
           <OrderCard
             key={product.id}
@@ -64,10 +64,10 @@ function MyOrder() {
         </p>
       </div>
 
-      <NavLink to="/payment">
+      <NavLink to="/payment" className="flex justify-center">
         <button
           className={`${theme === 'Dark' ? 'bg-blue-900 text-white' : 'bg-blue-700 text-black'} 
-           bottom-25 left-4 right-4 px-25 py-4 md:px-5 md:py-5 rounded-md text-center md:w-[20vw] md:ml-[7vw] ml-[6vw] md:mb-40  mb-30  text-amber-50 shadow-lg`}
+           bottom-25 left-4 right-4 px-25 py-4 md:px-5 md:py-5 rounded-md text-center md:w-[20vw]  items-center   md:mb-40  mb-30  text-amber-50 shadow-lg`}
         >
           Pay now
         </button>
@@ -77,3 +77,6 @@ function MyOrder() {
 }
 
 export default MyOrder;
+
+
+//<div className="w-6" md:ml-[5vw] ml-[5vw] flex flex-col items-center flex />

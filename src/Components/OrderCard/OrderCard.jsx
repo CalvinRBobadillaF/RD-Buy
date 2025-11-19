@@ -18,7 +18,7 @@ function OrderCard({ id, image, title, price, quantity, handleDelete }) {
     </button>
     }
     return (
-        <div className="flex justify-between items-center mb-3 border border-gray-200 rounded-lg p-4">
+        <div className="flex justify-between    border border-gray-200 rounded-lg p-4">
             <div className="flex items-center gap-2">
                 <figure className="w-20 h-20">
                     <img className="w-full h-full object-cover rounded-lg" src={image} alt={title} />

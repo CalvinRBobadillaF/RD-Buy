@@ -21,7 +21,7 @@ function MyOrders() {
     
     return(
         
-        <Layout>
+        <Layout >
             
             {context.orderPaid.map((order, index) => (
                 <Link key={index} to={`/my-order/`}> 
